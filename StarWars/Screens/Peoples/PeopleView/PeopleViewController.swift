@@ -22,7 +22,13 @@ class PeopleViewController: UIViewController {
         configureTableView()
         self.navigationController?.isNavigationBarHidden = true
         peopleViewModel.delegate = self
-        peopleViewModel.fetchPeoples(withUrlString: Constant.peopleApi)
+        
+        if NetWorkManager.shared.isNetworkReachable() {
+            peopleViewModel.fetchPeoples(withUrlString: Constant.peopleApi)
+        }else {
+            peopleViewModel.peoples = DatabaseHelper.sharedInstance.getPeoplesInfo()
+        }
+       
         
         nameSearchBar.searchTextField.delegate = self
         nameSearchBar.backgroundImage = UIImage()

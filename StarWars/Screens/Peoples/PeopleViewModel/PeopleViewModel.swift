@@ -20,6 +20,9 @@ class PeopleViewModel {
     var peoples : PeopleModel? = nil {
         didSet {
             delegate?.reloadData()
+            if let peoples {
+                DatabaseHelper.sharedInstance.savePeoplesInfo(results: peoples)
+            }
         }
     }
     

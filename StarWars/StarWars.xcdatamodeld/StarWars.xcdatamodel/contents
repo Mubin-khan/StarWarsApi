@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22757" systemVersion="23D60" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Peoples" representedClassName="Peoples" syncable="YES">
+        <attribute name="next" optional="YES" attributeType="String"/>
+        <attribute name="total" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="peoplesInfo" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PeoplesInfo" inverseName="peoples" inverseEntity="PeoplesInfo"/>
+    </entity>
+    <entity name="PeoplesInfo" representedClassName="PeoplesInfo" syncable="YES">
+        <attribute name="birthYear" optional="YES" attributeType="String"/>
+        <attribute name="gender" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="peoples" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Peoples" inverseName="peoplesInfo" inverseEntity="Peoples"/>
+    </entity>
 </model>
