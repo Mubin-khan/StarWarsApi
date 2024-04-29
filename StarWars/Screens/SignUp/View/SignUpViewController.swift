@@ -73,9 +73,13 @@ class SignUpViewController: UIViewController {
         passwordTextField.endEditing(true)
         confirmPasswordTextField.endEditing(true)
         
+        var dataModel : SignUpModel = SignUpModel(name: "", email: "", phoneNumber: "", parentName: "Male", gender: "")
+        var curPass : String = ""
+        
         var isAnyErrorOccured : Bool = false
         if let name = nameTextField.text {
             let trimmedName = name.trimmingCharacters(in: .whitespaces)
+            dataModel.name = trimmedName
             if trimmedName.isEmpty {
                 nameErrorLabel.text = "Name can't be empty"
                 nameErrorLabel.isHidden = false
@@ -85,9 +89,13 @@ class SignUpViewController: UIViewController {
         
         if let name = parentNameTextField.text {
             let trimmedName = name.trimmingCharacters(in: .whitespaces)
+            dataModel.parentName = trimmedName
             if trimmedName.isEmpty {
                 var parent = "Father's"
-                if parentNameLabel.text != "Father's Name" {parent = "Mother's"}
+                if parentNameLabel.text != "Father's Name" {
+                    parent = "Mother's"
+                    dataModel.gender = "Female"
+                }
                 parentNameErrorLabel.text = "\(parent) name can't be empty"
                 parentNameErrorLabel.isHidden = false
                 isAnyErrorOccured = true
@@ -96,6 +104,7 @@ class SignUpViewController: UIViewController {
         
         if let email = emaileTextField.text {
             let trimmedEmail = email.trimmingCharacters(in: .whitespaces)
+            dataModel.email = trimmedEmail
             if !trimmedEmail.validateEmail() {
                 emailErrorLabel.text = "Please enter valid email"
                 emailErrorLabel.isHidden = false
@@ -104,6 +113,7 @@ class SignUpViewController: UIViewController {
         }
         
         if let password = passwordTextField.text {
+            curPass = password
             if !password.validatePassword() {
                 passwordErrorLabel.text = "pass should be at least 6 character long"
                 passwordErrorLabel.isHidden = false
@@ -118,8 +128,23 @@ class SignUpViewController: UIViewController {
                 isAnyErrorOccured = true
             }
         }
-        
+        dataModel.phoneNumber = phoneNumberTextField.text?.trimmingCharacters(in: .whitespaces)
         // save info to coredata and back to login page
+        if isAnyErrorOccured {return}
+        let result = SignupCD.saveSignupInfo(infos: dataModel)
+        switch result {
+        case .success(_) : 
+            let keyChain = KeychainService()
+            keyChain.save(key: dataModel.email, value: curPass)
+            openAlert(title: "Success", message: "You are succesfully registered", alertStyle: .alert, actionTitles: ["OK"], actionStyles: [.default], action: [{ _ in
+            DispatchQueue.main.async {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }])
+        case .failure(_) : openAlert(title: "Error", message: "Sorry signup failed. try again!", alertStyle: .alert, actionTitles: ["OK"], actionStyles: [.default], action: [{ _ in
+             
+        }])
+        }
     }
     
     @IBAction func gotoSignInpageAction(_ sender: Any) {

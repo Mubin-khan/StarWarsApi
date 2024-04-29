@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,7 +13,6 @@
 		86C94F902BD97D1F005BA0C8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C94F8D2BD97D1F005BA0C8 /* LoginViewController.swift */; };
 		86C94F942BD985A6005BA0C8 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86C94F932BD985A6005BA0C8 /* SignUpViewController.xib */; };
 		86C94F952BD985A6005BA0C8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C94F922BD985A6005BA0C8 /* SignUpViewController.swift */; };
-		86CECF6F2BDBD88A0056B4CF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 86CECF6E2BDBD88A0056B4CF /* Kingfisher */; };
 		86CECF762BDBD98B0056B4CF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CECF752BDBD98B0056B4CF /* NetworkManager.swift */; };
 		86CECF7A2BDC4E870056B4CF /* PeopleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86CECF792BDC4E870056B4CF /* PeopleTableViewCell.xib */; };
 		86CECF7B2BDC4E870056B4CF /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CECF782BDC4E870056B4CF /* PeopleTableViewCell.swift */; };
@@ -33,7 +32,6 @@
 		86D244692BD844A200CB7631 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D244682BD844A200CB7631 /* Constant.swift */; };
 		86D2446C2BD845F500CB7631 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D2446A2BD845F500CB7631 /* PeopleViewController.swift */; };
 		86D2446D2BD845F500CB7631 /* PeopleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86D2446B2BD845F500CB7631 /* PeopleViewController.xib */; };
-		86D59CDA2BDCF6430040142D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 86D59CD92BDCF6430040142D /* Alamofire */; };
 		86D59CE02BDD6AF60040142D /* Peoples+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D59CDC2BDD6AF60040142D /* Peoples+CoreDataClass.swift */; };
 		86D59CE12BDD6AF60040142D /* Peoples+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D59CDD2BDD6AF60040142D /* Peoples+CoreDataProperties.swift */; };
 		86D59CE22BDD6AF60040142D /* PeoplesInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D59CDE2BDD6AF60040142D /* PeoplesInfo+CoreDataClass.swift */; };
@@ -41,6 +39,12 @@
 		86D59CE62BDD6B230040142D /* CoredataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D59CE52BDD6B230040142D /* CoredataStack.swift */; };
 		86D59CE82BDD6B320040142D /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D59CE72BDD6B320040142D /* DatabaseHelper.swift */; };
 		86D59CEA2BDD6B430040142D /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D59CE92BDD6B430040142D /* CoreDataModel.swift */; };
+		D76A244F2BDF7E69000772D6 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76A244E2BDF7E69000772D6 /* SignUpModel.swift */; };
+		D76A24522BDF84CF000772D6 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76A24512BDF84CF000772D6 /* LoginModel.swift */; };
+		D76A245F2BDF950E000772D6 /* SignupCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76A245D2BDF950E000772D6 /* SignupCD+CoreDataClass.swift */; };
+		D76A24602BDF950E000772D6 /* SignupCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76A245E2BDF950E000772D6 /* SignupCD+CoreDataProperties.swift */; };
+		D76A24632BDF9994000772D6 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76A24622BDF9994000772D6 /* LoginViewModel.swift */; };
+		D76A24662BDF9EE6000772D6 /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76A24652BDF9EE6000772D6 /* KeyChainService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +101,12 @@
 		86D59CE52BDD6B230040142D /* CoredataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoredataStack.swift; sourceTree = "<group>"; };
 		86D59CE72BDD6B320040142D /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		86D59CE92BDD6B430040142D /* CoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
+		D76A244E2BDF7E69000772D6 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		D76A24512BDF84CF000772D6 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		D76A245D2BDF950E000772D6 /* SignupCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignupCD+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D76A245E2BDF950E000772D6 /* SignupCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignupCD+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D76A24622BDF9994000772D6 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		D76A24652BDF9EE6000772D6 /* KeyChainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +114,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86CECF6F2BDBD88A0056B4CF /* Kingfisher in Frameworks */,
-				86D59CDA2BDCF6430040142D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,7 +200,6 @@
 				86D244562BD832B100CB7631 /* Helpers */,
 				86D244502BD800D900CB7631 /* Screens */,
 				86D2442E2BD8009500CB7631 /* Info.plist */,
-				86D244262BD8009400CB7631 /* StarWars.xcdatamodeld */,
 			);
 			path = StarWars;
 			sourceTree = "<group>";
@@ -228,6 +235,8 @@
 		86D244512BD800E800CB7631 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				D76A244D2BDF7E57000772D6 /* ViewModel */,
+				D76A244C2BDF7E51000772D6 /* Model */,
 				86C94F912BD98591005BA0C8 /* View */,
 			);
 			path = SignUp;
@@ -236,6 +245,8 @@
 		86D244522BD800F100CB7631 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				D76A24612BDF9983000772D6 /* ViewModel */,
+				D76A24502BDF84C1000772D6 /* Model */,
 				86C94F8C2BD97D0C005BA0C8 /* View */,
 			);
 			path = Login;
@@ -271,6 +282,7 @@
 		86D244562BD832B100CB7631 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				D76A24642BDF9ED9000772D6 /* KeychainService */,
 				86AB1C2F2BDEB755007E0032 /* Extensions */,
 				86D244572BD832D300CB7631 /* APIManager.swift */,
 				86CECF752BDBD98B0056B4CF /* NetworkManager.swift */,
@@ -333,15 +345,89 @@
 		86D59CDB2BDD669E0040142D /* Coredata */ = {
 			isa = PBXGroup;
 			children = (
-				86D59CDC2BDD6AF60040142D /* Peoples+CoreDataClass.swift */,
-				86D59CDD2BDD6AF60040142D /* Peoples+CoreDataProperties.swift */,
-				86D59CDE2BDD6AF60040142D /* PeoplesInfo+CoreDataClass.swift */,
-				86D59CDF2BDD6AF60040142D /* PeoplesInfo+CoreDataProperties.swift */,
+				D76A244B2BDF7DC4000772D6 /* Object */,
+				D76A244A2BDF7DB1000772D6 /* Data */,
 				86D59CE52BDD6B230040142D /* CoredataStack.swift */,
 				86D59CE72BDD6B320040142D /* DatabaseHelper.swift */,
 				86D59CE92BDD6B430040142D /* CoreDataModel.swift */,
 			);
 			path = Coredata;
+			sourceTree = "<group>";
+		};
+		D76A24432BDF63D1000772D6 /* People */ = {
+			isa = PBXGroup;
+			children = (
+				86D59CDC2BDD6AF60040142D /* Peoples+CoreDataClass.swift */,
+				86D59CDD2BDD6AF60040142D /* Peoples+CoreDataProperties.swift */,
+				86D59CDE2BDD6AF60040142D /* PeoplesInfo+CoreDataClass.swift */,
+				86D59CDF2BDD6AF60040142D /* PeoplesInfo+CoreDataProperties.swift */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
+		D76A24442BDF63EB000772D6 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				D76A245D2BDF950E000772D6 /* SignupCD+CoreDataClass.swift */,
+				D76A245E2BDF950E000772D6 /* SignupCD+CoreDataProperties.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		D76A244A2BDF7DB1000772D6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				86D244262BD8009400CB7631 /* StarWars.xcdatamodeld */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D76A244B2BDF7DC4000772D6 /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				D76A24442BDF63EB000772D6 /* SignUp */,
+				D76A24432BDF63D1000772D6 /* People */,
+			);
+			path = Object;
+			sourceTree = "<group>";
+		};
+		D76A244C2BDF7E51000772D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D76A244E2BDF7E69000772D6 /* SignUpModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D76A244D2BDF7E57000772D6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D76A24502BDF84C1000772D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D76A24512BDF84CF000772D6 /* LoginModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D76A24612BDF9983000772D6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D76A24622BDF9994000772D6 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D76A24642BDF9ED9000772D6 /* KeychainService */ = {
+			isa = PBXGroup;
+			children = (
+				D76A24652BDF9EE6000772D6 /* KeyChainService.swift */,
+			);
+			path = KeychainService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,8 +447,6 @@
 			);
 			name = StarWars;
 			packageProductDependencies = (
-				86CECF6E2BDBD88A0056B4CF /* Kingfisher */,
-				86D59CD92BDCF6430040142D /* Alamofire */,
 			);
 			productName = StarWars;
 			productReference = 86D2441A2BD8009400CB7631 /* StarWars.app */;
@@ -428,7 +512,7 @@
 				};
 			};
 			buildConfigurationList = 86D244152BD8009400CB7631 /* Build configuration list for PBXProject "StarWars" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -437,8 +521,6 @@
 			);
 			mainGroup = 86D244112BD8009400CB7631;
 			packageReferences = (
-				86CECF6D2BDBD8890056B4CF /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				86D59CD82BDCF6420040142D /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 86D2441B2BD8009400CB7631 /* Products */;
 			projectDirPath = "";
@@ -487,18 +569,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D76A24602BDF950E000772D6 /* SignupCD+CoreDataProperties.swift in Sources */,
+				D76A245F2BDF950E000772D6 /* SignupCD+CoreDataClass.swift in Sources */,
 				86CECF762BDBD98B0056B4CF /* NetworkManager.swift in Sources */,
 				86AB1C312BDEB778007E0032 /* String+Extension.swift in Sources */,
 				86C94F952BD985A6005BA0C8 /* SignUpViewController.swift in Sources */,
 				86D244282BD8009400CB7631 /* StarWars.xcdatamodeld in Sources */,
 				86D244652BD8368A00CB7631 /* PeopleViewModel.swift in Sources */,
 				86D59CE02BDD6AF60040142D /* Peoples+CoreDataClass.swift in Sources */,
+				D76A24632BDF9994000772D6 /* LoginViewModel.swift in Sources */,
+				D76A24662BDF9EE6000772D6 /* KeyChainService.swift in Sources */,
 				86D59CE12BDD6AF60040142D /* Peoples+CoreDataProperties.swift in Sources */,
 				86D59CE22BDD6AF60040142D /* PeoplesInfo+CoreDataClass.swift in Sources */,
 				86D59CE32BDD6AF60040142D /* PeoplesInfo+CoreDataProperties.swift in Sources */,
 				86D59CE82BDD6B320040142D /* DatabaseHelper.swift in Sources */,
 				86D244582BD832D300CB7631 /* APIManager.swift in Sources */,
 				86D244692BD844A200CB7631 /* Constant.swift in Sources */,
+				D76A244F2BDF7E69000772D6 /* SignUpModel.swift in Sources */,
 				86D244672BD8369D00CB7631 /* PeopleModel.swift in Sources */,
 				86D2446C2BD845F500CB7631 /* PeopleViewController.swift in Sources */,
 				86CECF7B2BDC4E870056B4CF /* PeopleTableViewCell.swift in Sources */,
@@ -506,6 +593,7 @@
 				86D2441E2BD8009400CB7631 /* AppDelegate.swift in Sources */,
 				86C94F902BD97D1F005BA0C8 /* LoginViewController.swift in Sources */,
 				86D244202BD8009400CB7631 /* SceneDelegate.swift in Sources */,
+				D76A24522BDF84CF000772D6 /* LoginModel.swift in Sources */,
 				86D59CEA2BDD6B430040142D /* CoreDataModel.swift in Sources */,
 				86AB1C332BDEB78E007E0032 /* UIViewcontroller+Extension.swift in Sources */,
 				86D59CE62BDD6B230040142D /* CoredataStack.swift in Sources */,
@@ -847,38 +935,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		86CECF6D2BDBD8890056B4CF /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.11.0;
-			};
-		};
-		86D59CD82BDCF6420040142D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.9.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		86CECF6E2BDBD88A0056B4CF /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 86CECF6D2BDBD8890056B4CF /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-		86D59CD92BDCF6430040142D /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 86D59CD82BDCF6420040142D /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		86D244262BD8009400CB7631 /* StarWars.xcdatamodeld */ = {

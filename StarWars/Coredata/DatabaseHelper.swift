@@ -8,6 +8,10 @@
 import UIKit
 import CoreData
 
+enum CoreDataError : Error {
+    case dataSavingError
+}
+
 class DatabaseHelper {
     static var sharedInstance = DatabaseHelper()
     let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.managedContext
@@ -53,31 +57,35 @@ class DatabaseHelper {
     }
     
     func getPeoplesInfo() -> PeopleModel? {
+        guard let context = context else {return nil}
+        
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Peoples")
-        let peoplesInfo : Peoples?
+        var peoplesInfo = [Peoples]()
         do {
-            peoplesInfo = try context?.fetch(fetchRequest) as? Peoples
+            let fetchRequest = NSFetchRequest<Peoples>(entityName: "Peoples")
+            fetchRequest.fetchLimit = 1
+            peoplesInfo = try context.fetch(fetchRequest)
             
-            if let peoplesInfo {
-                
-                var result : [PeopleResult] = []
-                if let temp = peoplesInfo.peoplesInfo {
-                    for inf in temp {
-                        if let currentInfo = inf as? PeoplesInfo {
-                            let cur = PeopleResult(name: currentInfo.name!, gender: currentInfo.gender!, birthYear: currentInfo.birthYear!, url: currentInfo.url!)
-                            result.append(cur)
+            for people in peoplesInfo {
+                   
+                    var result : [PeopleResult] = []
+                    if let temp = people.peoplesInfo {
+                        for inf in temp {
+                            if let currentInfo = inf as? PeoplesInfo {
+                                let cur = PeopleResult(name: currentInfo.name!, gender: currentInfo.gender!, birthYear: currentInfo.birthYear!, url: currentInfo.url!)
+                                result.append(cur)
+                            }
+                            
                         }
-                        
                     }
-                }
-               
-                let finalResult : PeopleModel? = PeopleModel (
-                    count: Int(peoplesInfo.total),
-                    next : peoplesInfo.next,
-                    results: result
-                )
-                
-                return finalResult
+                   
+                    let finalResult : PeopleModel? = PeopleModel (
+                        count: Int(people.total),
+                        next : people.next,
+                        results: result
+                    )
+                    
+                    return finalResult
             }
         }catch {
             print("couldn't find data")

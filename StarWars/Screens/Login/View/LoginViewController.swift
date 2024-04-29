@@ -15,8 +15,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var signupBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var titleTopConstraint: NSLayoutConstraint!
-    var email : String = "mubin@gmail.com"
-    var password : String = "123456"
+   
+    let loginViewModel = LoginViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,10 @@ class LoginViewController: UIViewController {
         passwordErrorLabel.isHidden = true
         emailTextField.delegate = self
         passwordTextField.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loginViewModel.getEmailPass()
     }
     
     func setupConstraint(){
@@ -55,12 +59,18 @@ class LoginViewController: UIViewController {
             }
             if isAnyFieldEmpty {return}
             
-            if trimmedEmail != email || password != self.password {
-                openAlert(title: "Alert", message: "Email or password isn't correct!", alertStyle: .alert, actionTitles: ["OK"], actionStyles: [.default], action: [{ _ in
+            if let info = loginViewModel.emailPass {
+                if trimmedEmail != info.email || password != info.password {
+                    openAlert(title: "Alert", message: "Email or password isn't correct!", alertStyle: .alert, actionTitles: ["OK"], actionStyles: [.default], action: [{ _ in
+
+                   }])
+                }else {
+                    gotoPeoplePage()
+                }
+            }else {
+                openAlert(title: "Alert", message: "Please signup first", alertStyle: .alert, actionTitles: ["OK"], actionStyles: [.default], action: [{ _ in
 
                }])
-            }else {
-                gotoPeoplePage()
             }
         }
     }
