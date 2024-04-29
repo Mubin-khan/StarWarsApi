@@ -16,6 +16,8 @@ class PeopleViewController: UIViewController {
     var isPaginating : Bool = false
     var isSearching : Bool = false
     
+    var searchworkItem : DispatchWorkItem?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,7 +31,6 @@ class PeopleViewController: UIViewController {
             peopleViewModel.peoples = DatabaseHelper.sharedInstance.getPeoplesInfo()
         }
        
-        
         nameSearchBar.searchTextField.delegate = self
         nameSearchBar.backgroundImage = UIImage()
         nameSearchBar.delegate = self
@@ -146,7 +147,14 @@ extension PeopleViewController : UISearchBarDelegate, UITextFieldDelegate {
     
     func searchResult(with : String){
         isSearching = true
-        peopleViewModel.fetchSearchedPeoples(withUrlString: Constant.peopleSerchApi+with)
+        searchworkItem?.cancel()
+        
+        let workItem = DispatchWorkItem { [weak self] in
+            self?.peopleViewModel.fetchSearchedPeoples(withUrlString: Constant.peopleSerchApi+with)
+        }
+        
+        searchworkItem = workItem
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: workItem)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

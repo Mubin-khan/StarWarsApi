@@ -62,7 +62,6 @@ class PeopleViewModel {
                 }
             } catch {
                 delegate?.failedWith(error: error)
-                print(error.localizedDescription)
             }
         }
     }

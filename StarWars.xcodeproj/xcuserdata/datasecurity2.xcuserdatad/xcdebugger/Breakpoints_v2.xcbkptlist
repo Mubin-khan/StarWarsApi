@@ -18,6 +18,38 @@
             endingLineNumber = "22"
             landmarkName = "getEmailPass()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EDEFA702-4D58-42FB-A890-FC1A6F98269A - 55144065baef3c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StarWars.LoginViewModel.getEmailPass() -&gt; ()"
+                  moduleName = "StarWars"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/datasecurity2/Desktop/StarWarsApi/StarWars/Screens/Login/ViewModel/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "252">
+               </Location>
+               <Location
+                  uuid = "EDEFA702-4D58-42FB-A890-FC1A6F98269A - 55144065baef3c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StarWars.LoginViewModel.getEmailPass() -&gt; ()"
+                  moduleName = "StarWars"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/datasecurity2/Desktop/StarWarsApi/StarWars/Screens/Login/ViewModel/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "236">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
