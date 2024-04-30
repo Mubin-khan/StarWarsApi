@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="23C71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22757" systemVersion="23D60" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Peoples" representedClassName="Peoples" syncable="YES">
         <attribute name="next" optional="YES" attributeType="String"/>
         <attribute name="total" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -8,9 +8,17 @@
     <entity name="PeoplesInfo" representedClassName="PeoplesInfo" syncable="YES">
         <attribute name="birthYear" optional="YES" attributeType="String"/>
         <attribute name="gender" optional="YES" attributeType="String"/>
+        <attribute name="height" optional="YES" attributeType="String"/>
+        <attribute name="mass" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="skinColor" optional="YES" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="String"/>
         <relationship name="peoples" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Peoples" inverseName="peoplesInfo" inverseEntity="Peoples"/>
+    </entity>
+    <entity name="Planet" representedClassName="Planet" syncable="YES">
+        <attribute name="climate" optional="YES" attributeType="String"/>
+        <attribute name="diameter" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
     <entity name="SignupCD" representedClassName=".SignupCD" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String"/>
@@ -18,5 +26,10 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="parentName" optional="YES" attributeType="String"/>
         <attribute name="phone" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Species" representedClassName="Species" syncable="YES">
+        <attribute name="classification" optional="YES" attributeType="String"/>
+        <attribute name="designation" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
 </model>

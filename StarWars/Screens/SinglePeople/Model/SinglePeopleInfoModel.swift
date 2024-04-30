@@ -8,17 +8,10 @@
 import Foundation
 
 struct SinglePeopleInfoModel : Codable {
-    var name : String
-    var gender : String
-    var dob : String
-    var mass : String
-    var height : String
-    var skinColor : String
-    var planetUrlString : String?
+    var planetUrlString : String
     var speciesUrlString : [String]
     
-    enum Codingkeys : String, CodingKey {
-        case name, gender, height, mass
+    enum CodingKeys : String, CodingKey {
         case planetUrlString = "homeworld"
         case speciesUrlString = "species"
     }

@@ -7,8 +7,9 @@
 
 import UIKit
 
-class SinglePeopleViewController: UIViewController {
+class SinglePeopleViewController: UIViewController, SinglePeopleViewModelProtocol {
     
+    @IBOutlet weak var loaderIndicator: UIActivityIndicatorView!
     @IBOutlet weak var designation: UILabel!
     @IBOutlet weak var classification: UILabel!
     @IBOutlet weak var speciesName: UILabel!
@@ -23,11 +24,47 @@ class SinglePeopleViewController: UIViewController {
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var skinColorLabel: UILabel!
     
+    let info : PeopleResult
+    let viewModel = SinglePeopleViewModel()
+    
+    init(info : PeopleResult){
+        self.info = info
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
+        loaderIndicator.startAnimating()
+        viewModel.delegate = self
+        viewModel.fetchPeopleInfo(with: info)
     }
+    
+    func writeDatas() {
+        loaderIndicator.stopAnimating()
+        
+        nameLabel.text = "Name : \(viewModel.peopleInfo?.name.capitalized ?? "")"
+        genderLabel.text = "Gender : \(viewModel.peopleInfo?.gender.capitalized ?? "")"
+        dobLabel.text = "D.O.B : \(viewModel.peopleInfo?.dob.capitalized ?? "")"
+        massLabel.text = "Mass : \(viewModel.peopleInfo?.mass.capitalized ?? "")"
+        heightLabel.text = "Height : \(viewModel.peopleInfo?.height.capitalized ?? "")"
+        skinColorLabel.text = "Skin Color : \(viewModel.peopleInfo?.skinColor.capitalized ?? "")"
+        planetName.text = "Name : \(viewModel.peopleInfo?.panetInfo?.name.capitalized ?? "")"
+        diameter.text = "Diameter : \(viewModel.peopleInfo?.panetInfo?.diameter.capitalized ?? "")"
+        climate.text = "Climate : \(viewModel.peopleInfo?.panetInfo?.climate.capitalized ?? "")"
+        speciesCountLabel.text = "Number of Species : \(viewModel.peopleInfo?.speciesInfo.count ?? 0)"
+        
+        if let firstSpecies = viewModel.peopleInfo?.speciesInfo.first {
+            speciesName.text = "Name : \(firstSpecies.name.capitalized)"
+            classification.text = "Classification : \(firstSpecies.classification.capitalized)"
+            designation.text = "Designation : \(firstSpecies.designation.capitalized)"
+        }
+    }
+    
     
     @IBAction func crossAction(_ sender: Any) {
         dismiss(animated: true)

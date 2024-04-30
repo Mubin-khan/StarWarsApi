@@ -44,6 +44,9 @@ class DatabaseHelper {
             info.gender = information.gender
             info.birthYear = information.birthYear
             info.url = information.url
+            info.height = information.height
+            info.mass = information.mass
+            info.skinColor = information.skinColor
             peoplesInformations.append(info)
         }
         let infoSet = NSSet.init(array: peoplesInformations)
@@ -59,7 +62,6 @@ class DatabaseHelper {
     func getPeoplesInfo() -> PeopleModel? {
         guard let context = context else {return nil}
         
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Peoples")
         var peoplesInfo = [Peoples]()
         do {
             let fetchRequest = NSFetchRequest<Peoples>(entityName: "Peoples")
@@ -72,7 +74,7 @@ class DatabaseHelper {
                     if let temp = people.peoplesInfo {
                         for inf in temp {
                             if let currentInfo = inf as? PeoplesInfo {
-                                let cur = PeopleResult(name: currentInfo.name!, gender: currentInfo.gender!, birthYear: currentInfo.birthYear!, url: currentInfo.url!)
+                                let cur = PeopleResult(name: currentInfo.name ?? "", gender: currentInfo.gender ?? "", birthYear: currentInfo.birthYear ?? "", url: currentInfo.url ?? "", mass: currentInfo.mass ?? "", height: currentInfo.height ?? "", skinColor: currentInfo.skinColor ?? "")
                                 result.append(cur)
                             }
                             

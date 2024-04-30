@@ -18,32 +18,34 @@ struct PeopleResult : Codable {
     let name, gender : String
     let birthYear : String
     let url : String
+    var mass : String
+    var height : String
+    var skinColor : String
     
     enum CodingKeys : String, CodingKey {
-        case name, gender, url
+        case name, gender, url, mass, height
         case birthYear = "birth_year"
+        case skinColor = "skin_color"
     }
 }
 
-
-//// MARK: - Result
-//struct PeopleResult: Codable {
-//    let name, height, mass, hairColor: String
-//    let skinColor, eyeColor, birthYear: String
-//    let gender: String //Gender
-//    let homeworld: String
-//    let films, species, vehicles, starships: [String]
-//    let created, edited: String
-//    let url: String
+//struct PeopleModelToShow {
+//    var count: Int?
+//    var next: String?
+//    var results: [PeopleResultToShow]
+//}
 //
-//    enum CodingKeys: String, CodingKey {
-//        case name, height, mass
-//        case hairColor = "hair_color"
-//        case skinColor = "skin_color"
-//        case eyeColor = "eye_color"
-//        case birthYear = "birth_year"
-//        case gender, homeworld, films, species, vehicles, starships, created, edited, url
-//    }
+//
+//struct PeopleResultToShow {
+//    let name, gender : String
+//    let birthYear : String
+//    let url : String
+//    var mass : String
+//    var height : String
+//    var skinColor : String
+//    var planet : PeoplePlanetModel
+//    var species : [PeopleSpeciesModel]
+// 
 //}
 
 

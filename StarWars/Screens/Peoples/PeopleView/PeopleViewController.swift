@@ -25,11 +25,11 @@ class PeopleViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         peopleViewModel.delegate = self
         
-        if NetWorkManager.shared.isNetworkReachable() {
-            peopleViewModel.fetchPeoples(withUrlString: Constant.peopleApi)
-        }else {
+//        if NetWorkManager.shared.isNetworkReachable() {
+//            peopleViewModel.fetchPeoples(withUrlString: Constant.peopleApi)
+//        }else {
             peopleViewModel.peoples = DatabaseHelper.sharedInstance.getPeoplesInfo()
-        }
+//        }
        
         nameSearchBar.searchTextField.delegate = self
         nameSearchBar.backgroundImage = UIImage()
@@ -44,6 +44,11 @@ class PeopleViewController: UIViewController {
         peopleTableView.register(nib, forCellReuseIdentifier: nibNameString)
         peopleTableView.delegate = self
         peopleTableView.dataSource = self
+    }
+    
+    fileprivate func gotoSinglePage(with info : PeopleResult){
+        let vc = SinglePeopleViewController(info: info)
+        self.present(vc, animated: true)
     }
 }
 
@@ -67,6 +72,18 @@ extension PeopleViewController : UITableViewDelegate, UITableViewDataSource {
         }
         
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let info : PeopleResult?
+        if isSearching {
+            info = peopleViewModel.searchedPeoples?.results[indexPath.row]
+        }else {
+            info = peopleViewModel.peoples?.results[indexPath.row]
+        }
+        if let info {
+            gotoSinglePage(with: info)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

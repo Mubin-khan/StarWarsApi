@@ -17,6 +17,7 @@
                 <outlet property="dobLabel" destination="xg9-gA-Av3" id="8W4-Fr-ADg"/>
                 <outlet property="genderLabel" destination="5t6-pe-Rzw" id="UBd-vU-VK2"/>
                 <outlet property="heightLabel" destination="WQM-R4-tHT" id="E0K-Ib-gdr"/>
+                <outlet property="loaderIndicator" destination="9r0-O1-bcf" id="y7j-63-IBC"/>
                 <outlet property="massLabel" destination="Mul-nb-hAe" id="5q6-KF-HOK"/>
                 <outlet property="nameLabel" destination="vB2-Tz-3J3" id="iVH-Fd-xcb"/>
                 <outlet property="planetName" destination="6Ch-vm-Tk7" id="YBN-QS-elK"/>
@@ -54,38 +55,38 @@
                         <constraint firstAttribute="height" constant="50" id="mEo-qv-nfK"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name : Mubin Khan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vB2-Tz-3J3">
-                    <rect key="frame" x="30" y="139" width="160" height="21.333333333333343"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vB2-Tz-3J3">
+                    <rect key="frame" x="30.000000000000004" y="139" width="59.333333333333343" height="21.333333333333343"/>
                     <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="17"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender : Male" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5t6-pe-Rzw">
-                    <rect key="frame" x="30" y="180.33333333333334" width="88" height="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5t6-pe-Rzw">
+                    <rect key="frame" x="30.000000000000004" y="180.33333333333334" width="57.333333333333343" height="17"/>
                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skin color : Chocklate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPJ-by-Ovz">
-                    <rect key="frame" x="30" y="308.33333333333331" width="129.66666666666666" height="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skin Color : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPJ-by-Ovz">
+                    <rect key="frame" x="29.999999999999993" y="308.33333333333331" width="73.333333333333314" height="17"/>
                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D.O.B. : 1996" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xg9-gA-Av3">
-                    <rect key="frame" x="30" y="212.33333333333334" width="84" height="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D.O.B. : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xg9-gA-Av3">
+                    <rect key="frame" x="30" y="212.33333333333334" width="53" height="17"/>
                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height : 122" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQM-R4-tHT">
-                    <rect key="frame" x="30.000000000000007" y="276.33333333333331" width="73.666666666666686" height="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQM-R4-tHT">
+                    <rect key="frame" x="29.999999999999996" y="276.33333333333331" width="50.666666666666657" height="17"/>
                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mass : 30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mul-nb-hAe">
-                    <rect key="frame" x="30" y="244.33333333333334" width="59" height="17.000000000000028"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mass : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mul-nb-hAe">
+                    <rect key="frame" x="30" y="244.33333333333334" width="43" height="17.000000000000028"/>
                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -96,48 +97,52 @@
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name : xyz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ch-vm-Tk7">
-                    <rect key="frame" x="45" y="406.66666666666669" width="70" height="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ch-vm-Tk7">
+                    <rect key="frame" x="45" y="406.66666666666669" width="48.666666666666657" height="17"/>
                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="diameter : xxx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytn-ta-Dra">
-                    <rect key="frame" x="45" y="438.66666666666669" width="86" height="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diameter : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytn-ta-Dra">
+                    <rect key="frame" x="45" y="438.66666666666669" width="66" height="17"/>
                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="climate : xxx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjY-M4-ELe">
-                    <rect key="frame" x="45.000000000000007" y="470.66666666666669" width="75.666666666666686" height="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Climate : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjY-M4-ELe">
+                    <rect key="frame" x="45" y="470.66666666666669" width="56.666666666666657" height="17"/>
                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Species : 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deI-XE-ctX">
-                    <rect key="frame" x="30" y="527.66666666666663" width="171.66666666666666" height="21.333333333333371"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Species : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deI-XE-ctX">
+                    <rect key="frame" x="30" y="527.66666666666663" width="162.33333333333334" height="21.333333333333371"/>
                     <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="17"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name : xyz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1p5-8P-oCb">
-                    <rect key="frame" x="45" y="569" width="70" height="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1p5-8P-oCb">
+                    <rect key="frame" x="45" y="569" width="44.666666666666657" height="17"/>
                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="classification : xyz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAj-Yd-Szg">
-                    <rect key="frame" x="44.999999999999993" y="601" width="107.33333333333331" height="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Classification :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAj-Yd-Szg">
+                    <rect key="frame" x="45.000000000000007" y="601" width="84.666666666666686" height="17"/>
                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="designation : xyz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMw-dP-GSa">
-                    <rect key="frame" x="45.000000000000007" y="633" width="101.66666666666669" height="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Designation :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMw-dP-GSa">
+                    <rect key="frame" x="45.000000000000007" y="633" width="77.666666666666686" height="17"/>
                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="9r0-O1-bcf">
+                    <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                    <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -156,12 +161,14 @@
                 <constraint firstItem="gjY-M4-ELe" firstAttribute="leading" secondItem="Ytn-ta-Dra" secondAttribute="leading" id="T1E-Ay-A1a"/>
                 <constraint firstItem="deI-XE-ctX" firstAttribute="leading" secondItem="mxY-9d-pTu" secondAttribute="leading" id="VRu-5y-b0Q"/>
                 <constraint firstItem="Ytn-ta-Dra" firstAttribute="leading" secondItem="6Ch-vm-Tk7" secondAttribute="leading" id="ZKq-DN-ejU"/>
+                <constraint firstItem="9r0-O1-bcf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Zvw-9c-wSE"/>
                 <constraint firstItem="xg9-gA-Av3" firstAttribute="leading" secondItem="5t6-pe-Rzw" secondAttribute="leading" id="asG-iC-0vy"/>
                 <constraint firstItem="IhZ-Gz-muf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cJq-vA-Ang"/>
                 <constraint firstItem="xg9-gA-Av3" firstAttribute="top" secondItem="5t6-pe-Rzw" secondAttribute="bottom" constant="15" id="cOa-ff-NW8"/>
                 <constraint firstItem="eMw-dP-GSa" firstAttribute="top" secondItem="zAj-Yd-Szg" secondAttribute="bottom" constant="15" id="e9Y-7J-Ope"/>
                 <constraint firstItem="gjY-M4-ELe" firstAttribute="top" secondItem="Ytn-ta-Dra" secondAttribute="bottom" constant="15" id="g8F-JD-Iu2"/>
                 <constraint firstItem="eMw-dP-GSa" firstAttribute="leading" secondItem="zAj-Yd-Szg" secondAttribute="leading" id="gPG-v9-jbZ"/>
+                <constraint firstItem="9r0-O1-bcf" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="gh3-2o-bxS"/>
                 <constraint firstItem="zAj-Yd-Szg" firstAttribute="top" secondItem="1p5-8P-oCb" secondAttribute="bottom" constant="15" id="hbz-NV-h5M"/>
                 <constraint firstItem="deI-XE-ctX" firstAttribute="top" secondItem="gjY-M4-ELe" secondAttribute="bottom" constant="40" id="kgI-cW-KCC"/>
                 <constraint firstItem="gPJ-by-Ovz" firstAttribute="leading" secondItem="WQM-R4-tHT" secondAttribute="leading" id="kqj-fF-lig"/>
