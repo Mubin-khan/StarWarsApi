@@ -25,11 +25,11 @@ class PeopleViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         peopleViewModel.delegate = self
         
-//        if NetWorkManager.shared.isNetworkReachable() {
-//            peopleViewModel.fetchPeoples(withUrlString: Constant.peopleApi)
-//        }else {
+        if NetWorkManager.shared.isNetworkReachable() {
+            peopleViewModel.fetchPeoples(withUrlString: Constant.peopleApi)
+        }else {
             peopleViewModel.peoples = DatabaseHelper.sharedInstance.getPeoplesInfo()
-//        }
+        }
        
         nameSearchBar.searchTextField.delegate = self
         nameSearchBar.backgroundImage = UIImage()
@@ -48,7 +48,7 @@ class PeopleViewController: UIViewController {
     
     fileprivate func gotoSinglePage(with info : PeopleResult){
         let vc = SinglePeopleViewController(info: info)
-        self.present(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -123,9 +123,17 @@ extension PeopleViewController : UITableViewDelegate, UITableViewDataSource {
 }
 
 extension PeopleViewController : PeopleProtocol {
-    func failedWith(error: any Error) {
-        // show Error maessage
+    func failedSearch(errr: DataError) {
         hideSpinner()
+    }
+    
+    func failedWith(error: DataError) {
+        // show Error maessage
+        openAlert(title: "Error", message: "Server Error plese try again later!", alertStyle: .alert, actionTitles: ["OK"], actionStyles: [.default], action: [{ _ in
+           
+       }])
+        
+       hideSpinner()
     }
     
     func reloadData() {

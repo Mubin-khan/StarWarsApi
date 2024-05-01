@@ -41,7 +41,14 @@ class SinglePeopleViewController: UIViewController, SinglePeopleViewModelProtoco
 
         loaderIndicator.startAnimating()
         viewModel.delegate = self
-        viewModel.fetchPeopleInfo(with: info)
+        if NetWorkManager.shared.isNetworkReachable() {
+            viewModel.fetchPeopleInfo(with: info)
+        }else {
+            loaderIndicator.stopAnimating()
+            openAlert(title: "Error", message: "Check your network connection and try again!", alertStyle: .alert, actionTitles: ["OK"], actionStyles: [.default], action: [{ _ in
+                
+            }])
+        }
     }
     
     func writeDatas() {
@@ -65,9 +72,22 @@ class SinglePeopleViewController: UIViewController, SinglePeopleViewModelProtoco
         }
     }
     
+    func showError(err: DataError) {
+        switch err {
+        case .invalidResponse :  openAlert(title: "Error", message: "Server Error plese try again later!", alertStyle: .alert, actionTitles: ["OK"], actionStyles: [.default], action: [{ _ in
+            
+        }])
+        case .invalidUrl : openAlert(title: "Error", message: "Server Error plese try again later!", alertStyle: .alert, actionTitles: ["OK"], actionStyles: [.default], action: [{ _ in
+            
+        }])
+        default : openAlert(title: "Error", message: "Server Error plese try again later!", alertStyle: .alert, actionTitles: ["OK"], actionStyles: [.default], action: [{ _ in
+            
+        }])
+        }
+    }
     
     @IBAction func crossAction(_ sender: Any) {
-        dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
 }

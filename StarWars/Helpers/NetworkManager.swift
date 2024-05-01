@@ -6,16 +6,15 @@
 //
 
 import Foundation
-//import Alamofire
+import Alamofire
 
 class NetWorkManager : NSObject {
     static let shared = NetWorkManager()
     
-//    let reachabilityManager = NetworkReachabilityManager()
+    let reachabilityManager = NetworkReachabilityManager()
     
     func isNetworkReachable() -> Bool {
-        return true
-//        return reachabilityManager?.isReachable ?? false
+        return reachabilityManager?.isReachable ?? false
     }
     
     private override init() {}

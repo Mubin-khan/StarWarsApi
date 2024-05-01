@@ -17,6 +17,7 @@
 		86AB1C332BDEB78E007E0032 /* UIViewcontroller+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AB1C322BDEB78E007E0032 /* UIViewcontroller+Extension.swift */; };
 		86BF34522BE1179A00D55820 /* PeoplesInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BF34502BE1179A00D55820 /* PeoplesInfo+CoreDataClass.swift */; };
 		86BF34532BE1179A00D55820 /* PeoplesInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BF34512BE1179A00D55820 /* PeoplesInfo+CoreDataProperties.swift */; };
+		86BF34562BE14E5500D55820 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 86BF34552BE14E5500D55820 /* Alamofire */; };
 		86C94F8F2BD97D1F005BA0C8 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86C94F8E2BD97D1F005BA0C8 /* LoginViewController.xib */; };
 		86C94F902BD97D1F005BA0C8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C94F8D2BD97D1F005BA0C8 /* LoginViewController.swift */; };
 		86C94F942BD985A6005BA0C8 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86C94F932BD985A6005BA0C8 /* SignUpViewController.xib */; };
@@ -126,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86BF34562BE14E5500D55820 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +499,7 @@
 			);
 			name = StarWars;
 			packageProductDependencies = (
+				86BF34552BE14E5500D55820 /* Alamofire */,
 			);
 			productName = StarWars;
 			productReference = 86D2441A2BD8009400CB7631 /* StarWars.app */;
@@ -571,6 +574,7 @@
 			);
 			mainGroup = 86D244112BD8009400CB7631;
 			packageReferences = (
+				86BF34542BE14E5400D55820 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 86D2441B2BD8009400CB7631 /* Products */;
 			projectDirPath = "";
@@ -991,6 +995,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		86BF34542BE14E5400D55820 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		86BF34552BE14E5500D55820 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 86BF34542BE14E5400D55820 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		86D244262BD8009400CB7631 /* StarWars.xcdatamodeld */ = {
