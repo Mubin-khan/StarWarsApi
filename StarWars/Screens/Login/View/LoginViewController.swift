@@ -38,6 +38,9 @@ class LoginViewController: UIViewController {
             string: msg,
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         )
+        cnt.layer.borderWidth = 1
+        cnt.layer.borderColor = UIColor.lightGray.cgColor
+        cnt.layer.cornerRadius = 6
     }
     
     override func viewWillAppear(_ animated: Bool) {

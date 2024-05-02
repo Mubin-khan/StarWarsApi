@@ -9,6 +9,7 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var contentScrollView: UIScrollView!
     @IBOutlet weak var maleButton: UIButton!
     @IBOutlet weak var femaleButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
@@ -35,6 +36,24 @@ class SignUpViewController: UIViewController {
         parentNameTextField.delegate = self
         passwordTextField.delegate = self
         confirmPasswordTextField.delegate = self
+        
+        placeholderColorChange(msg: "ex: Will Smith", cnt: nameTextField)
+        placeholderColorChange(msg: "ex: will.smith@email.com", cnt: emaileTextField)
+        placeholderColorChange(msg: "Optional  ex: 01xxxxxxxxx", cnt: phoneNumberTextField)
+        placeholderColorChange(msg: "ex: Jack Smith", cnt: parentNameTextField)
+        placeholderColorChange(msg: "*********", cnt: passwordTextField)
+        placeholderColorChange(msg: "*********", cnt: confirmPasswordTextField)
+    
+    }
+    
+    private func placeholderColorChange(msg : String, cnt : UITextField) {
+        cnt.attributedPlaceholder = NSAttributedString(
+            string: msg,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        )
+        cnt.layer.borderWidth = 1
+        cnt.layer.borderColor = UIColor.lightGray.cgColor
+        cnt.layer.cornerRadius = 6
     }
     
     private func hideAllErrorLabel(){
@@ -169,8 +188,19 @@ extension SignUpViewController : UITextFieldDelegate {
         case nameTextField : nameErrorLabel.isHidden = true
         case emaileTextField : emailErrorLabel.isHidden = true
         case parentNameTextField : parentNameErrorLabel.isHidden = true
+            contentScrollView.setContentOffset(CGPoint(x: 0, y: 200), animated: true)
         case passwordTextField : passwordErrorLabel.isHidden = true
+            contentScrollView.setContentOffset(CGPoint(x: 0, y: 300), animated: true)
         case confirmPasswordTextField : confirmPasswordErrorLabel.isHidden = true
+            contentScrollView.setContentOffset(CGPoint(x: 0, y: 300), animated: true)
+        default : break
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        switch textField {
+        case passwordTextField : contentScrollView.setContentOffset(.zero, animated: true)
+        case confirmPasswordTextField : contentScrollView.setContentOffset(.zero, animated: true)
         default : break
         }
     }

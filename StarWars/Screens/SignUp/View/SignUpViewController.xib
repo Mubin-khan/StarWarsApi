@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,6 +12,7 @@
             <connections>
                 <outlet property="confirmPasswordErrorLabel" destination="g0H-8O-8el" id="1tC-Px-USx"/>
                 <outlet property="confirmPasswordTextField" destination="Gf7-1d-Vbw" id="dTI-u9-0bQ"/>
+                <outlet property="contentScrollView" destination="Dp0-n6-1ds" id="bt2-VO-nxW"/>
                 <outlet property="emailErrorLabel" destination="ADY-fE-ILm" id="Btk-ZY-Y1K"/>
                 <outlet property="emaileTextField" destination="zRW-kF-OmY" id="fh7-Ii-NwR"/>
                 <outlet property="femaleButton" destination="kEF-Iw-LM2" id="O4D-lK-UBE"/>
@@ -317,7 +317,7 @@
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="NMh-4s-911" secondAttribute="bottom" id="AsH-7J-Jhq"/>
                                         <constraint firstItem="NMh-4s-911" firstAttribute="leading" secondItem="R8q-Uj-MRb" secondAttribute="trailing" id="B6N-BX-MVA"/>
@@ -376,8 +376,5 @@
         <image name="backIcon" width="64" height="64"/>
         <image name="circle" catalog="system" width="128" height="123"/>
         <image name="circle.fill" catalog="system" width="128" height="123"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
