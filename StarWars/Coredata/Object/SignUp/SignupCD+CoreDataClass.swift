@@ -44,10 +44,10 @@ public class SignupCD: NSManagedObject {
         return .success(true)
     }
     
-    class func getLoginMail() -> String {
+    class func getLoginInfo() -> LoginModel? {
         
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.managedContext else {
-            return ""
+            return nil
         }
         
         let fetchRequest = NSFetchRequest<SignupCD>(entityName: "SignupCD")
@@ -55,12 +55,13 @@ public class SignupCD: NSManagedObject {
         do {
             let signUpDats = try context.fetch(fetchRequest)
             for info in signUpDats {
-                let email = info.email
-                return email ?? ""
+                if let email = info.email, let password = info.password {
+                    return LoginModel(email: email, password: password)
+                }
             }
         } catch {
-            return ""
+            return nil
         }
-        return ""
+        return nil
     }
 }

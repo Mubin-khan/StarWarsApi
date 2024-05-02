@@ -180,6 +180,11 @@ class SignUpViewController: UIViewController {
     @IBAction func gotoSignInpageAction(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func backAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 extension SignUpViewController : UITextFieldDelegate {
