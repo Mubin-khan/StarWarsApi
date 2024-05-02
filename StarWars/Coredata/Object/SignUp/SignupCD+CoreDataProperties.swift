@@ -2,7 +2,7 @@
 //  SignupCD+CoreDataProperties.swift
 //  StarWars
 //
-//  Created by DSDEVMAC2 on 4/29/24.
+//  Created by Mubin Khan on 5/2/24.
 //
 //
 
@@ -21,6 +21,7 @@ extension SignupCD {
     @NSManaged public var name: String?
     @NSManaged public var parentName: String?
     @NSManaged public var phone: String?
+    @NSManaged public var password: String?
 
 }
 

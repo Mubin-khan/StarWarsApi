@@ -17,8 +17,9 @@ class LoginViewModel {
     func getEmailPass() {
        let email = SignupCD.getLoginMail()
        if email.isEmpty {return}
-       let keychain = KeychainService()
-       let password = "123456" //keychain.load(key: email)
-       emailPass = LoginModel(email: email, password: password)
+       let keychain = KeyChainService()
+        if let password = keychain.getStringFromKeychain(forKey: email) {
+            emailPass = LoginModel(email: email, password: password)
+        }
     }
 }

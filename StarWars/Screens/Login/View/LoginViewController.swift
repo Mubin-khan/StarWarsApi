@@ -28,6 +28,16 @@ class LoginViewController: UIViewController {
         passwordErrorLabel.isHidden = true
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        
+        placeholderColorChange(msg: "ex: jon.smith@email.com", cnt: emailTextField)
+        placeholderColorChange(msg: "******", cnt: passwordTextField)
+    }
+    
+    private func placeholderColorChange(msg : String, cnt : UITextField) {
+        cnt.attributedPlaceholder = NSAttributedString(
+            string: msg,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        )
     }
     
     override func viewWillAppear(_ animated: Bool) {

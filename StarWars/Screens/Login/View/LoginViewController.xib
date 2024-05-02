@@ -42,6 +42,7 @@
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex: jon.smith@email.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xLg-lJ-Clo">
                             <rect key="frame" x="51" y="38" width="291" height="42"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="42" id="RcP-xo-R8G"/>
                             </constraints>
@@ -57,6 +58,7 @@
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*********" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Jr-Uu-LjP">
                             <rect key="frame" x="51" y="123" width="291" height="42"/>
+                            <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="42" id="83Y-Fn-d7E"/>
                             </constraints>
@@ -107,16 +109,17 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fqX-vo-IDN">
-                    <rect key="frame" x="86.666666666666686" y="639" width="220" height="29"/>
+                    <rect key="frame" x="85.000000000000014" y="639" width="223.33333333333337" height="29"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUL-QE-eHo">
-                            <rect key="frame" x="0.0" y="6" width="158" height="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUL-QE-eHo">
+                            <rect key="frame" x="0.0" y="6" width="161.33333333333334" height="17"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                             <color key="textColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qe6-DH-Y5p">
-                            <rect key="frame" x="158" y="0.0" width="62" height="29"/>
+                            <rect key="frame" x="161.33333333333334" y="0.0" width="62" height="29"/>
                             <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="SIGN UP">
@@ -127,7 +130,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="Qe6-DH-Y5p" firstAttribute="leading" secondItem="IUL-QE-eHo" secondAttribute="trailing" id="4kQ-Wd-YFX"/>
                         <constraint firstItem="IUL-QE-eHo" firstAttribute="leading" secondItem="fqX-vo-IDN" secondAttribute="leading" id="TOH-BH-iBC"/>

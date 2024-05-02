@@ -73,7 +73,7 @@ class SignUpViewController: UIViewController {
         passwordTextField.endEditing(true)
         confirmPasswordTextField.endEditing(true)
         
-        var dataModel : SignUpModel = SignUpModel(name: "", email: "", phoneNumber: "", parentName: "Male", gender: "")
+        var dataModel : SignUpModel = SignUpModel(name: "", email: "", phoneNumber: "", parentName: "Male", gender: "", password: "")
         var curPass : String = ""
         
         var isAnyErrorOccured : Bool = false
@@ -114,6 +114,7 @@ class SignUpViewController: UIViewController {
         
         if let password = passwordTextField.text {
             curPass = password
+            dataModel.password = password
             if !password.validatePassword() {
                 passwordErrorLabel.text = "pass should be at least 6 character long"
                 passwordErrorLabel.isHidden = false
@@ -134,13 +135,23 @@ class SignUpViewController: UIViewController {
         let result = SignupCD.saveSignupInfo(infos: dataModel)
         switch result {
         case .success(_) : 
-            let keyChain = KeychainService()
-            keyChain.save(key: dataModel.email, value: curPass)
-            openAlert(title: "Success", message: "You are succesfully registered", alertStyle: .alert, actionTitles: ["OK"], actionStyles: [.default], action: [{ _ in
-            DispatchQueue.main.async {
-                self.navigationController?.popViewController(animated: true)
+//            let keyChain = KeychainService()
+//            keyChain.save(key: dataModel.email, value: curPass)
+            let keychain = KeyChainService()
+            let isSaved = keychain.saveStringToKeychain(curPass, forKey: dataModel.email)
+            if isSaved {
+                openAlert(title: "Success", message: "You are succesfully registered", alertStyle: .alert, actionTitles: ["OK"], actionStyles: [.default], action: [{ _ in
+                    DispatchQueue.main.async {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }])
+            }else {
+                // delete data from core data
+                openAlert(title: "Error", message: "Sorry try again!", alertStyle: .alert, actionTitles: ["OK"], actionStyles: [.default], action: [{ _ in
+                   
+                }])
             }
-        }])
+            
         case .failure(_) : openAlert(title: "Error", message: "Sorry signup failed. try again!", alertStyle: .alert, actionTitles: ["OK"], actionStyles: [.default], action: [{ _ in
              
         }])

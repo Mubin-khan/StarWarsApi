@@ -13,4 +13,5 @@ struct SignUpModel {
     var phoneNumber : String?
     var parentName : String
     var gender : String
+    var password : String
 }

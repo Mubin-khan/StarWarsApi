@@ -2,12 +2,12 @@
 //  SignupCD+CoreDataClass.swift
 //  StarWars
 //
-//  Created by DSDEVMAC2 on 4/29/24.
+//  Created by Mubin Khan on 5/2/24.
 //
 //
 
-import CoreData
 import UIKit
+import CoreData
 
 
 public class SignupCD: NSManagedObject {
@@ -17,6 +17,15 @@ public class SignupCD: NSManagedObject {
             return .failure(CoreDataError.dataSavingError)
         }
         
+        let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "SignupCD")
+        let deleteRequest1 = NSBatchDeleteRequest(fetchRequest: fetchRequest1)
+        
+        do {
+            try context.execute(deleteRequest1)
+        } catch {
+            
+        }
+        
         let entity = NSEntityDescription.entity(forEntityName: "SignupCD", in: context)
         let singupData = NSManagedObject(entity: entity!, insertInto: context)
         singupData.setValue(infos.name, forKey: "name")
@@ -24,6 +33,7 @@ public class SignupCD: NSManagedObject {
         singupData.setValue(infos.phoneNumber, forKey: "phone")
         singupData.setValue(infos.gender, forKey: "gender")
         singupData.setValue(infos.parentName, forKey: "parentName")
+        singupData.setValue(infos.password, forKey: "password")
         
         do {
             try context.save()
