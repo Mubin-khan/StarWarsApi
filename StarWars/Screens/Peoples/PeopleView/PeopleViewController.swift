@@ -28,7 +28,9 @@ class PeopleViewController: UIViewController {
         if NetWorkManager.shared.isNetworkReachable() {
             peopleViewModel.fetchPeoples(withUrlString: Constant.peopleApi)
         }else {
-            peopleViewModel.peoples = DatabaseHelper.sharedInstance.getPeoplesInfo()
+            let tmp = DatabaseHelper.sharedInstance.getPeoplesInfo()
+            peopleViewModel.peoples = tmp.0
+            peopleViewModel.singlePeoplesInfo = tmp.1
         }
        
         nameSearchBar.searchTextField.delegate = self
@@ -48,6 +50,8 @@ class PeopleViewController: UIViewController {
     
     fileprivate func gotoSinglePage(with info : PeopleResult){
         let vc = SinglePeopleViewController(info: info)
+        vc.delegate = self
+        vc.singleInfos = peopleViewModel.singlePeoplesInfo[info.url]
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -188,5 +192,11 @@ extension PeopleViewController : UISearchBarDelegate, UITextFieldDelegate {
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
         return true
+    }
+}
+
+extension PeopleViewController : PeopleInfoProtocol {
+    func sinlgePeopleinfo(with: FinalSinglePeopleInfoModel, url : String) {
+        peopleViewModel.singlePeoplesInfo[url] = with
     }
 }

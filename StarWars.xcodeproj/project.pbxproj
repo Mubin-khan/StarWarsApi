@@ -13,10 +13,14 @@
 		866A5E742BE01C870086A27C /* PeoplePlanetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866A5E732BE01C870086A27C /* PeoplePlanetModel.swift */; };
 		866A5E762BE01C9D0086A27C /* PeopleSpeciesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866A5E752BE01C9D0086A27C /* PeopleSpeciesModel.swift */; };
 		866A5E792BE01ED40086A27C /* SinglePeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866A5E782BE01ED40086A27C /* SinglePeopleViewModel.swift */; };
+		86777BE02BE4B84500FEE3BE /* Planet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86777BDA2BE4B84500FEE3BE /* Planet+CoreDataClass.swift */; };
+		86777BE12BE4B84500FEE3BE /* Planet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86777BDB2BE4B84500FEE3BE /* Planet+CoreDataProperties.swift */; };
+		86777BE22BE4B84500FEE3BE /* PeoplesInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86777BDC2BE4B84500FEE3BE /* PeoplesInfo+CoreDataClass.swift */; };
+		86777BE32BE4B84500FEE3BE /* PeoplesInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86777BDD2BE4B84500FEE3BE /* PeoplesInfo+CoreDataProperties.swift */; };
+		86777BE42BE4B84500FEE3BE /* Species+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86777BDE2BE4B84500FEE3BE /* Species+CoreDataClass.swift */; };
+		86777BE52BE4B84500FEE3BE /* Species+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86777BDF2BE4B84500FEE3BE /* Species+CoreDataProperties.swift */; };
 		86AB1C312BDEB778007E0032 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AB1C302BDEB778007E0032 /* String+Extension.swift */; };
 		86AB1C332BDEB78E007E0032 /* UIViewcontroller+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AB1C322BDEB78E007E0032 /* UIViewcontroller+Extension.swift */; };
-		86BF34522BE1179A00D55820 /* PeoplesInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BF34502BE1179A00D55820 /* PeoplesInfo+CoreDataClass.swift */; };
-		86BF34532BE1179A00D55820 /* PeoplesInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BF34512BE1179A00D55820 /* PeoplesInfo+CoreDataProperties.swift */; };
 		86BF34562BE14E5500D55820 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 86BF34552BE14E5500D55820 /* Alamofire */; };
 		86C94F8F2BD97D1F005BA0C8 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86C94F8E2BD97D1F005BA0C8 /* LoginViewController.xib */; };
 		86C94F902BD97D1F005BA0C8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C94F8D2BD97D1F005BA0C8 /* LoginViewController.swift */; };
@@ -78,10 +82,14 @@
 		866A5E732BE01C870086A27C /* PeoplePlanetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeoplePlanetModel.swift; sourceTree = "<group>"; };
 		866A5E752BE01C9D0086A27C /* PeopleSpeciesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleSpeciesModel.swift; sourceTree = "<group>"; };
 		866A5E782BE01ED40086A27C /* SinglePeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePeopleViewModel.swift; sourceTree = "<group>"; };
+		86777BDA2BE4B84500FEE3BE /* Planet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Planet+CoreDataClass.swift"; sourceTree = "<group>"; };
+		86777BDB2BE4B84500FEE3BE /* Planet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Planet+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		86777BDC2BE4B84500FEE3BE /* PeoplesInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeoplesInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		86777BDD2BE4B84500FEE3BE /* PeoplesInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeoplesInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		86777BDE2BE4B84500FEE3BE /* Species+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Species+CoreDataClass.swift"; sourceTree = "<group>"; };
+		86777BDF2BE4B84500FEE3BE /* Species+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Species+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		86AB1C302BDEB778007E0032 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		86AB1C322BDEB78E007E0032 /* UIViewcontroller+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewcontroller+Extension.swift"; sourceTree = "<group>"; };
-		86BF34502BE1179A00D55820 /* PeoplesInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeoplesInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
-		86BF34512BE1179A00D55820 /* PeoplesInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeoplesInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		86C94F8D2BD97D1F005BA0C8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		86C94F8E2BD97D1F005BA0C8 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		86C94F922BD985A6005BA0C8 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +191,19 @@
 				866A5E782BE01ED40086A27C /* SinglePeopleViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		86777BD92BE4B7AA00FEE3BE /* SinglePeopleInfo */ = {
+			isa = PBXGroup;
+			children = (
+				86777BDA2BE4B84500FEE3BE /* Planet+CoreDataClass.swift */,
+				86777BDB2BE4B84500FEE3BE /* Planet+CoreDataProperties.swift */,
+				86777BDC2BE4B84500FEE3BE /* PeoplesInfo+CoreDataClass.swift */,
+				86777BDD2BE4B84500FEE3BE /* PeoplesInfo+CoreDataProperties.swift */,
+				86777BDE2BE4B84500FEE3BE /* Species+CoreDataClass.swift */,
+				86777BDF2BE4B84500FEE3BE /* Species+CoreDataProperties.swift */,
+			);
+			path = SinglePeopleInfo;
 			sourceTree = "<group>";
 		};
 		86AB1C2F2BDEB755007E0032 /* Extensions */ = {
@@ -409,8 +430,6 @@
 		D76A24432BDF63D1000772D6 /* People */ = {
 			isa = PBXGroup;
 			children = (
-				86BF34502BE1179A00D55820 /* PeoplesInfo+CoreDataClass.swift */,
-				86BF34512BE1179A00D55820 /* PeoplesInfo+CoreDataProperties.swift */,
 				86D59CDC2BDD6AF60040142D /* Peoples+CoreDataClass.swift */,
 				86D59CDD2BDD6AF60040142D /* Peoples+CoreDataProperties.swift */,
 			);
@@ -437,6 +456,7 @@
 		D76A244B2BDF7DC4000772D6 /* Object */ = {
 			isa = PBXGroup;
 			children = (
+				86777BD92BE4B7AA00FEE3BE /* SinglePeopleInfo */,
 				D76A24442BDF63EB000772D6 /* SignUp */,
 				D76A24432BDF63D1000772D6 /* People */,
 			);
@@ -624,8 +644,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86BF34522BE1179A00D55820 /* PeoplesInfo+CoreDataClass.swift in Sources */,
-				86BF34532BE1179A00D55820 /* PeoplesInfo+CoreDataProperties.swift in Sources */,
+				86777BE02BE4B84500FEE3BE /* Planet+CoreDataClass.swift in Sources */,
+				86777BE12BE4B84500FEE3BE /* Planet+CoreDataProperties.swift in Sources */,
+				86777BE22BE4B84500FEE3BE /* PeoplesInfo+CoreDataClass.swift in Sources */,
+				86777BE32BE4B84500FEE3BE /* PeoplesInfo+CoreDataProperties.swift in Sources */,
+				86777BE42BE4B84500FEE3BE /* Species+CoreDataClass.swift in Sources */,
+				86777BE52BE4B84500FEE3BE /* Species+CoreDataProperties.swift in Sources */,
 				866A5E742BE01C870086A27C /* PeoplePlanetModel.swift in Sources */,
 				86CECF762BDBD98B0056B4CF /* NetworkManager.swift in Sources */,
 				86AB1C312BDEB778007E0032 /* String+Extension.swift in Sources */,

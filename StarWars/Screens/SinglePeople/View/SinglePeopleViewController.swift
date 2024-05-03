@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol PeopleInfoProtocol : AnyObject {
+    func sinlgePeopleinfo(with : FinalSinglePeopleInfoModel, url : String)
+}
+
 class SinglePeopleViewController: UIViewController, SinglePeopleViewModelProtocol {
     
     @IBOutlet weak var loaderIndicator: UIActivityIndicatorView!
@@ -24,8 +28,10 @@ class SinglePeopleViewController: UIViewController, SinglePeopleViewModelProtoco
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var skinColorLabel: UILabel!
     
+    weak var delegate : PeopleInfoProtocol?
     let info : PeopleResult
     let viewModel = SinglePeopleViewModel()
+    var singleInfos : FinalSinglePeopleInfoModel?
     
     init(info : PeopleResult){
         self.info = info
@@ -38,16 +44,20 @@ class SinglePeopleViewController: UIViewController, SinglePeopleViewModelProtoco
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         loaderIndicator.startAnimating()
         viewModel.delegate = self
-        if NetWorkManager.shared.isNetworkReachable() {
-            viewModel.fetchPeopleInfo(with: info)
+        if let data = singleInfos?.panetInfo?.name, !data.isEmpty {
+            viewModel.peopleInfo = singleInfos
         }else {
-            loaderIndicator.stopAnimating()
-            openAlert(title: "Error", message: "Check your network connection and try again!", alertStyle: .alert, actionTitles: ["OK"], actionStyles: [.default], action: [{ _ in
-                
-            }])
+            if NetWorkManager.shared.isNetworkReachable() {
+                viewModel.fetchPeopleInfo(with: info)
+            }else {
+                loaderIndicator.stopAnimating()
+                openAlert(title: "Error", message: "Check your network connection and try again!", alertStyle: .alert, actionTitles: ["OK"], actionStyles: [.default], action: [{ _ in
+                    
+                }])
+            }
         }
     }
     
@@ -69,6 +79,10 @@ class SinglePeopleViewController: UIViewController, SinglePeopleViewModelProtoco
             speciesName.text = "Name : \(firstSpecies.name.capitalized)"
             classification.text = "Classification : \(firstSpecies.classification.capitalized)"
             designation.text = "Designation : \(firstSpecies.designation.capitalized)"
+        }
+        
+        if let infos = viewModel.peopleInfo {
+            delegate?.sinlgePeopleinfo(with: infos, url: info.url)
         }
     }
     

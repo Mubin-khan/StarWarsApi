@@ -2,7 +2,7 @@
 //  PeoplesInfo+CoreDataClass.swift
 //  StarWars
 //
-//  Created by Mubin Khan on 4/30/24.
+//  Created by Mubin Khan on 5/3/24.
 //
 //
 

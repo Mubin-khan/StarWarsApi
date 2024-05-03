@@ -39,12 +39,16 @@ class SinglePeopleViewModel {
                             let tmp : Result< PeopleSpeciesModel, DataError> = try await manager.request(urlString: url)
                             switch tmp {
                             case .success(let spInfo) : speciesfInfo.append(spInfo)
-                            case .failure(let err) : break;
+                            case .failure(_) : break;
                             }
                         }
                         peopleInfo = FinalSinglePeopleInfoModel(name: info.name, gender: info.gender, dob: info.birthYear, mass: info.mass, height: info.height, skinColor: info.skinColor, panetInfo: pInfo, speciesInfo: speciesfInfo)
                         
                         delegate?.writeDatas()
+                        if let peopleInfo {
+                            DatabaseHelper.sharedInstance.updatePeopleInfoWithDiscription(info: peopleInfo, url: info.url)
+                        }
+                       
                     case .failure(let err) : delegate?.showError(err: err)
                     }
                 case .failure(let err) : delegate?.showError(err: err)

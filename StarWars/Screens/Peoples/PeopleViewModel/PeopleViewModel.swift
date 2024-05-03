@@ -21,11 +21,10 @@ class PeopleViewModel {
     var peoples : PeopleModel? = nil {
         didSet {
             delegate?.reloadData()
-            if let peoples {
-                DatabaseHelper.sharedInstance.savePeoplesInfo(results: peoples)
-            }
         }
     }
+    
+    var singlePeoplesInfo : [String : FinalSinglePeopleInfoModel] = [:]
     
     var searchedPeoples : PeopleModel? = nil {
         didSet {
@@ -44,6 +43,9 @@ class PeopleViewModel {
                         peoples?.results.append(contentsOf: p.results)
                     }else {
                         peoples = p
+                    }
+                    if let peoples {
+                        DatabaseHelper.sharedInstance.savePeoplesInfo(results: peoples, disc: singlePeoplesInfo)
                     }
                 case .failure(let er) :
                     delegate?.failedWith(error: er)

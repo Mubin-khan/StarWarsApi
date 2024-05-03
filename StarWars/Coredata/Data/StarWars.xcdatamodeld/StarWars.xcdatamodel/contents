@@ -14,11 +14,14 @@
         <attribute name="skinColor" optional="YES" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="String"/>
         <relationship name="peoples" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Peoples" inverseName="peoplesInfo" inverseEntity="Peoples"/>
+        <relationship name="planet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Planet" inverseName="peoplesInfo" inverseEntity="Planet"/>
+        <relationship name="species" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Species" inverseName="peoplesInfo" inverseEntity="Species"/>
     </entity>
     <entity name="Planet" representedClassName="Planet" syncable="YES">
         <attribute name="climate" optional="YES" attributeType="String"/>
         <attribute name="diameter" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="peoplesInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PeoplesInfo" inverseName="planet" inverseEntity="PeoplesInfo"/>
     </entity>
     <entity name="SignupCD" representedClassName=".SignupCD" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String"/>
@@ -32,5 +35,6 @@
         <attribute name="classification" optional="YES" attributeType="String"/>
         <attribute name="designation" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="peoplesInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PeoplesInfo" inverseName="species" inverseEntity="PeoplesInfo"/>
     </entity>
 </model>
