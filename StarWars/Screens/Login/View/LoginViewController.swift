@@ -20,10 +20,15 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.navigationController?.isNavigationBarHidden = true
         setupConstraint()
+        setupTextfield()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+    
+    private func setupTextfield(){
         emailErrorLabel.isHidden = true
         passwordErrorLabel.isHidden = true
         emailTextField.delegate = self
@@ -31,6 +36,13 @@ class LoginViewController: UIViewController {
         
         placeholderColorChange(msg: "ex: jon.smith@email.com", cnt: emailTextField)
         placeholderColorChange(msg: "******", cnt: passwordTextField)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            let keyboardHeight = keyboardSize.height
+//            contentScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight + 60, right: 0)
+        }
     }
     
     private func placeholderColorChange(msg : String, cnt : UITextField) {
@@ -48,7 +60,7 @@ class LoginViewController: UIViewController {
     }
     
     func setupConstraint(){
-        titleTopConstraint.constant = view.bounds.height / 6
+        titleTopConstraint.constant = view.bounds.height / 8
         signupBottomConstraint.constant = view.bounds.height / 8
     }
 
@@ -107,5 +119,14 @@ extension LoginViewController : UITextFieldDelegate {
         case passwordTextField : passwordErrorLabel.isHidden = true
         default : break
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case emailTextField : passwordTextField.becomeFirstResponder()
+        case passwordTextField : textField.resignFirstResponder()
+        default : break
+        }
+        return true
     }
 }

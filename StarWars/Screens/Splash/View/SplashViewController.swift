@@ -13,8 +13,8 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 2){ [weak self] in
-//            let vc = LoginViewController()
-            let vc = PeopleViewController()
+            let vc = LoginViewController()
+//            let vc = PeopleViewController()
             self?.navigationController?.pushViewController(vc, animated: true)
         }
     }

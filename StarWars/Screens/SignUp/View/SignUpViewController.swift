@@ -29,8 +29,20 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var confirmPasswordErrorLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         hideAllErrorLabel()
+        setupTextField()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            let keyboardHeight = keyboardSize.height
+            contentScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight + 60, right: 0)
+        }
+    }
+    
+    private func setupTextField() {
         nameTextField.delegate = self
         emaileTextField.delegate = self
         parentNameTextField.delegate = self
@@ -43,7 +55,6 @@ class SignUpViewController: UIViewController {
         placeholderColorChange(msg: "ex: Jack Smith", cnt: parentNameTextField)
         placeholderColorChange(msg: "*********", cnt: passwordTextField)
         placeholderColorChange(msg: "*********", cnt: confirmPasswordTextField)
-    
     }
     
     private func placeholderColorChange(msg : String, cnt : UITextField) {
@@ -153,23 +164,12 @@ class SignUpViewController: UIViewController {
         if isAnyErrorOccured {return}
         let result = SignupCD.saveSignupInfo(infos: dataModel)
         switch result {
-        case .success(_) : 
-//            let keyChain = KeychainService()
-//            keyChain.save(key: dataModel.email, value: curPass)
-            let keychain = KeyChainService()
-            let isSaved = keychain.saveStringToKeychain(curPass, forKey: dataModel.email)
-            if isSaved {
+        case .success(_) :
                 openAlert(title: "Success", message: "You are succesfully registered", alertStyle: .alert, actionTitles: ["OK"], actionStyles: [.default], action: [{ _ in
                     DispatchQueue.main.async {
                         self.navigationController?.popViewController(animated: true)
                     }
                 }])
-            }else {
-                // delete data from core data
-                openAlert(title: "Error", message: "Sorry try again!", alertStyle: .alert, actionTitles: ["OK"], actionStyles: [.default], action: [{ _ in
-                   
-                }])
-            }
             
         case .failure(_) : openAlert(title: "Error", message: "Sorry signup failed. try again!", alertStyle: .alert, actionTitles: ["OK"], actionStyles: [.default], action: [{ _ in
              
@@ -193,20 +193,22 @@ extension SignUpViewController : UITextFieldDelegate {
         case nameTextField : nameErrorLabel.isHidden = true
         case emaileTextField : emailErrorLabel.isHidden = true
         case parentNameTextField : parentNameErrorLabel.isHidden = true
-            contentScrollView.setContentOffset(CGPoint(x: 0, y: 200), animated: true)
         case passwordTextField : passwordErrorLabel.isHidden = true
-            contentScrollView.setContentOffset(CGPoint(x: 0, y: 300), animated: true)
         case confirmPasswordTextField : confirmPasswordErrorLabel.isHidden = true
-            contentScrollView.setContentOffset(CGPoint(x: 0, y: 300), animated: true)
         default : break
         }
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
-        case passwordTextField : contentScrollView.setContentOffset(.zero, animated: true)
-        case confirmPasswordTextField : contentScrollView.setContentOffset(.zero, animated: true)
+        case nameTextField : emaileTextField.becomeFirstResponder()
+        case emaileTextField : phoneNumberTextField.becomeFirstResponder()
+        case phoneNumberTextField : parentNameTextField.becomeFirstResponder()
+        case parentNameTextField : passwordTextField.becomeFirstResponder()
+        case passwordTextField : confirmPasswordTextField.becomeFirstResponder() 
+        case confirmPasswordTextField : confirmPasswordTextField.resignFirstResponder()
         default : break
         }
+        return true
     }
 }
