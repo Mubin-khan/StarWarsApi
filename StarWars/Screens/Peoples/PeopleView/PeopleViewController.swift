@@ -25,14 +25,26 @@ class PeopleViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         peopleViewModel.delegate = self
         
-        if NetWorkManager.shared.isNetworkReachable() {
-            peopleViewModel.fetchPeoples(withUrlString: Constant.peopleApi)
-        }else {
-            let tmp = DatabaseHelper.sharedInstance.getPeoplesInfo()
-            peopleViewModel.peoples = tmp.0
-            peopleViewModel.singlePeoplesInfo = tmp.1
-        }
-       
+        handleNetworkCall()
+        setupSearchbar()
+    }
+    
+    private func handleNetworkCall(){
+        NetWorkManager.shared.reachabilityManager?.startListening(onUpdatePerforming: { [weak self]_ in
+            if self?.peopleViewModel.peoples == nil {
+                if let isNetworkReachable = NetWorkManager.shared.reachabilityManager?.isReachable,
+                   isNetworkReachable == true {
+                    self?.peopleViewModel.fetchPeoples(withUrlString: Constant.peopleApi)
+                } else {
+                    let tmp = DatabaseHelper.sharedInstance.getPeoplesInfo()
+                    self?.peopleViewModel.peoples = tmp.0
+                    self?.peopleViewModel.singlePeoplesInfo = tmp.1
+                }
+            }
+        })
+    }
+    
+    private func setupSearchbar(){
         nameSearchBar.searchTextField.delegate = self
         nameSearchBar.backgroundImage = UIImage()
         nameSearchBar.delegate = self
