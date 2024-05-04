@@ -114,6 +114,12 @@ extension PeopleViewController : UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? PeopleTableViewCell {
+            cell.contentView.backgroundColor = UIColor.white
+        }
+    }
+    
     fileprivate func createSpinnerFooter() -> UIView {
         let vw = UIView(frame: CGRect(origin: .zero, size: CGSize(width: view.bounds.width, height: 100)))
         let spinner = UIActivityIndicatorView()
