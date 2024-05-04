@@ -124,7 +124,9 @@ extension LoginViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
         case emailTextField : passwordTextField.becomeFirstResponder()
-        case passwordTextField : textField.resignFirstResponder()
+        case passwordTextField :
+            textField.resignFirstResponder()
+            signInAction(Any.self)
         default : break
         }
         return true
